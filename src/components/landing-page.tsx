@@ -65,6 +65,7 @@ function HeroCarousel() {
 
   const change = (direction: number) => setActive((active + direction + heroProjects.length) % heroProjects.length);
   const current = heroProjects[active];
+  if (!current) return null;
 
   return (
     <section id="top" ref={sectionRef} aria-roledescription="carousel" aria-label="Featured productions" className="relative min-h-[680px] h-[100svh] overflow-hidden" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={() => setPaused(false)} onKeyDown={(e) => { if (e.key === "ArrowRight") change(1); if (e.key === "ArrowLeft") change(-1); }} tabIndex={0}>
