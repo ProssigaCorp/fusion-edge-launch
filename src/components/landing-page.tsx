@@ -70,7 +70,7 @@ function HeroCarousel() {
     <section id="top" ref={sectionRef} aria-roledescription="carousel" aria-label="Featured productions" className="relative min-h-[680px] h-[100svh] overflow-hidden" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={() => setPaused(false)} onKeyDown={(e) => { if (e.key === "ArrowRight") change(1); if (e.key === "ArrowLeft") change(-1); }} tabIndex={0}>
       {heroProjects.map((project, index) => (
         <div key={project.title} aria-hidden={index !== active} className={cn("absolute inset-0 transition-opacity duration-700", index === active ? "opacity-100" : "opacity-0")}>
-          <img src={project.image} alt={index === active ? project.alt : ""} fetchPriority={index === 0 ? "high" : "auto"} loading={index === 0 ? "eager" : "lazy"} className="h-full w-full object-cover motion-safe:animate-[cinema-in_7s_ease-out_both]" style={{ objectPosition: project.position }} width={1920} height={1080} />
+          <img src={project.image} alt={index === active ? project.alt : ""} fetchPriority={index === 0 ? "high" : "auto"} loading={index === 0 ? "eager" : "lazy"} className="h-full w-full object-cover object-center motion-safe:animate-[cinema-in_7s_ease-out_both]" width={1920} height={1080} />
         </div>
       ))}
       <div className="absolute inset-0 bg-hero-scrim" />
@@ -116,7 +116,7 @@ function WorkRail() {
       <div ref={railRef} className="hide-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-[var(--gutter)] pb-4" tabIndex={0}>
         {heroProjects.map((project, index) => (
           <article key={project.title} className="group relative aspect-[16/10] w-[86vw] max-w-[720px] shrink-0 snap-start overflow-hidden bg-card md:w-[58vw] lg:w-[44vw]">
-            <img src={project.image} alt={project.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]" style={{ objectPosition: project.position }} width={960} height={600} />
+            <img src={project.image} alt={project.alt} loading="lazy" className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.025]" width={960} height={600} />
             <div className="absolute inset-0 bg-card-scrim" />
             <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
               <div className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-foreground/65">0{index + 1} · {project.kicker}</div>
