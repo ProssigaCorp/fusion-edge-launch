@@ -96,7 +96,7 @@ function HeroCarousel() {
           <Button variant="icon" aria-label="Next slide" onClick={() => change(1)}><ArrowRight size={18} /></Button>
         </div>
         <div className="hidden flex-1 items-center gap-3 sm:flex">
-          {heroProjects.map((project, index) => <button key={project.title} aria-label={`Show ${project.title}`} aria-current={index === active} onClick={() => setActive(index)} className="group flex h-11 flex-1 items-center"><span className={cn("h-px w-full transition-colors", index === active ? "bg-primary" : "bg-border group-hover:bg-foreground/50")} /></button>)}
+          {heroProjects.map((project, index) => <Button key={project.title} variant="ghost" aria-label={`Show ${project.title}`} aria-current={index === active} onClick={() => setActive(index)} className="group flex h-11 min-h-0 flex-1 border-0 p-0"><span className={cn("h-px w-full transition-colors", index === active ? "bg-primary" : "bg-border group-hover:bg-foreground/50")} /></Button>)}
         </div>
         <span className="text-xs tabular-nums text-foreground/70">0{active + 1} / 0{heroProjects.length}</span>
       </div>
